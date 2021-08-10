@@ -23,7 +23,7 @@
             android:id="@+id/representativeButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/default_padding"
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="@string/representative_button"
             android:textColor="@color/white"
@@ -47,14 +47,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/margin_normal" />
+            app:layout_constraintGuide_end="@dimen/default_padding" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/margin_normal" />
+            app:layout_constraintGuide_begin="@dimen/default_padding" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -62,14 +62,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/margin_normal" />
+            app:layout_constraintGuide_end="@dimen/default_padding" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/margin_normal" />
+            app:layout_constraintGuide_begin="@dimen/default_padding" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

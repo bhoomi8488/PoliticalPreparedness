@@ -14,8 +14,6 @@ class VoterInfoViewModel(private val dataSource: ElectionDao,
                          private val electionId: Int,
                          private val division: Division) : ViewModel() {
 
-    var electionFromDatabase: Election? = null
-
 
     private val _voterInfo = MutableLiveData<VoterInfoResponse>()
     val voterInfo: LiveData<VoterInfoResponse>

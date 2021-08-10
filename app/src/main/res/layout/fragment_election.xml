@@ -14,6 +14,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/upcoming_elections"
+            android:textColor="@color/gray50"
+
             app:layout_constraintBottom_toTopOf="@id/rv_upcoming_elections"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
@@ -26,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
             android:text="@string/saved_elections"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/gray50"
             android:textSize="@dimen/text_size_large"
             app:layout_constraintBottom_toTopOf="@id/rv_saved_elections"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
@@ -46,14 +48,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/margin_normal" />
+            app:layout_constraintGuide_end="@dimen/default_padding" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/margin_normal" />
+            app:layout_constraintGuide_begin="@dimen/default_padding" />
 
         <!--app:listData="@{viewModel.upcomingElections}"-->
         <androidx.constraintlayout.widget.Guideline
@@ -61,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/margin_normal" />
+            app:layout_constraintGuide_end="@dimen/default_padding" />
 
 
 

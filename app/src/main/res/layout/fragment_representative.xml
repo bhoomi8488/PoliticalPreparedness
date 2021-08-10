@@ -105,7 +105,7 @@
                 style="@style/header"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/default_padding"
                 android:text="@string/representative_search"
                 app:layout_constraintEnd_toStartOf="@id/guidelineEndAddress"
                 app:layout_constraintStart_toStartOf="@id/guidelineStartAddress"
@@ -116,28 +116,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/margin_normal" />
+                app:layout_constraintGuide_begin="@dimen/default_padding" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineEndAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/margin_normal" />
+                app:layout_constraintGuide_end="@dimen/default_padding" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineTopAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="@dimen/margin_normal" />
+                app:layout_constraintGuide_begin="@dimen/default_padding" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineBottomAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_end="@dimen/margin_normal" />
+                app:layout_constraintGuide_end="@dimen/default_padding" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -155,7 +155,7 @@
                 style="@style/header"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/default_padding"
                 android:text="@string/my_representatives"
                 app:layout_constraintEnd_toStartOf="@id/guidelineEndRepresentatives"
                 app:layout_constraintStart_toStartOf="@id/guidelineStartRepresentatives"
@@ -180,14 +180,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="@dimen/margin_normal" />
+                app:layout_constraintGuide_begin="@dimen/default_padding" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineBottomRepresentatives"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_end="@dimen/margin_normal" />
+                app:layout_constraintGuide_end="@dimen/default_padding" />
 
 
             <androidx.constraintlayout.widget.Guideline
@@ -195,14 +195,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/margin_normal" />
+                app:layout_constraintGuide_begin="@dimen/default_padding" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineEndRepresentatives"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/margin_normal" />
+                app:layout_constraintGuide_end="@dimen/default_padding" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_representatives"
