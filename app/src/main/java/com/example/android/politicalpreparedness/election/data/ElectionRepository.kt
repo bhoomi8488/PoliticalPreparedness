@@ -39,7 +39,6 @@ class ElectionRepository(
         }
     }
 
-
     override suspend fun getVoterInfo(map: Map<String, Any>): Result<VoterInfoResponse> {
         return withContext(ioDispatcher) {
             return@withContext try {

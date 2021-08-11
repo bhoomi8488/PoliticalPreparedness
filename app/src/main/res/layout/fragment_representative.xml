@@ -106,7 +106,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_padding"
-                android:text="@string/representative_search"
+                android:text="@string/representatives_search"
                 app:layout_constraintEnd_toStartOf="@id/guidelineEndAddress"
                 app:layout_constraintStart_toStartOf="@id/guidelineStartAddress"
                 app:layout_constraintTop_toTopOf="parent" />

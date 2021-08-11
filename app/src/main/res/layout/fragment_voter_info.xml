@@ -24,6 +24,7 @@
             android:id="@+id/progress_bar"
             android:layout_width="@dimen/height_50"
             android:layout_height="@dimen/height_50"
+
             android:indeterminateTint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +33,7 @@
 
         <TextView
             android:id="@+id/election_date_header"
-            style="@style/TextView.24.Bold"
+            style="@style/TextBold24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_padding"
@@ -52,7 +53,7 @@
 
         <TextView
             android:id="@+id/election_information"
-            style="@style/TextView.24.Bold"
+            style="@style/TextBold24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16"
@@ -76,6 +77,7 @@
             android:layout_width="@dimen/match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/default_padding"
+            android:drawableStart="@drawable/ic_baseline_open_in_browser_24"
             android:onClick="@{() -> voterInfoViewModel.openLink(voterInfoViewModel.ballotInfoLink)}"
             android:padding="@dimen/default_padding"
             android:text="@string/ballot_information"
@@ -88,6 +90,7 @@
         <TextView
             android:id="@+id/state_locations"
             android:layout_width="@dimen/match_parent"
+            android:drawableStart="@drawable/ic_baseline_open_in_browser_24"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/default_padding"
             android:onClick="@{() -> voterInfoViewModel.openLink(voterInfoViewModel.locationLink)}"
@@ -136,7 +139,7 @@
             android:layout_marginStart="@dimen/default_padding"
             android:layout_marginTop="@dimen/default_padding"
             android:layout_marginEnd="@dimen/default_padding"
-            android:background="@color/gray50"
+            android:background="@color/gray30"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/state_header" />

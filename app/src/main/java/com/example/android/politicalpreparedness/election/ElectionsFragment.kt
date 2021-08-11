@@ -38,10 +38,6 @@ class ElectionsFragment : Fragment(), ElectionListener {
     }
 
     override fun onElectionClick(id: Int, division: Division) {
-
-        println("id====")
-        println("division====$division")
-
         this@ElectionsFragment.findNavController().navigate(ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(id, division))
     }
 

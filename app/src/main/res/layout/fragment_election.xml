@@ -49,8 +49,8 @@
                 android:layout_marginStart="@dimen/default_padding"
                 android:layout_marginTop="@dimen/default_padding"
                 android:layout_marginEnd="@dimen/default_padding"
-                android:text="@string/text_upcoming_elections"
-                android:textAppearance="@style/TextView.24.Bold"
+                android:text="@string/text_TextBold24"
+                android:textAppearance="@style/TextBold24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +63,7 @@
                 android:layout_marginTop="@dimen/default_padding"
                 android:layout_marginEnd="@dimen/default_padding"
                 android:text="@string/text_saved_elections"
-                android:textAppearance="@style/TextView.24.Bold"
+                android:textAppearance="@style/TextBold24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/progress_holder" />
