@@ -86,4 +86,7 @@ dependencies {
 
     // Location
     implementation "com.google.android.gms:play-services-location:$version_play_services_location"
+
+    //ViewModel SaveState
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$version_view_model_save_state"
 }

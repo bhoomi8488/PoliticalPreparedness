@@ -13,7 +13,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:text="@string/upcoming_button"
+            android:text="@string/text_upcoming_elections"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@id/representativeButton"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"

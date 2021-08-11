@@ -3,11 +3,7 @@
     <string name="app_name">Political Preparedness</string>
 
     <string name="application_logo_description">Application Logo</string>
-    <string name="upcoming_button">UPCOMING ELECTIONS</string>
     <string name="representative_button">FIND MY REPRESENTATIVES</string>
-    <string name="upcoming_elections">UPCOMING ELECTIONS</string>
-    <string name="saved_elections">SAVED ELECTIONS</string>
-    <string name="follow_unfollow_button">FOLLOW</string>
     <string name="representative_search">Representative Search</string>
     <string name="address_line_1">Address Line 1</string>
     <string name="address_line_2">Address Line 2</string>
@@ -22,7 +18,40 @@
     <string name="website">Webiste</string>
     <string name="facebook">Facebook</string>
     <string name="twitter">Twitter</string>
-    <string name="follow_button">FOLLOW</string>
-    <string name="unfollow_button">UNFOLLOW</string>
+    <string name="follow_election_text">FOLLOW</string>
+    <string name="un_follow_election">UNFOLLOW</string>
+
+    <string name="button_text_representative">Find my representative</string>
+    <string name="text_upcoming_elections">Upcoming Elections</string>
+    <string name="description_launch_icon">launch icon</string>
+    <string name="text_saved_elections">Saved Elections</string>
+    <string name="election_information">Election Information</string>
+    <string name="election_date">Election Date</string>
+    <string name="ballot_information">Ballot Information</string>
+    <string name="voting_locations">Voting Locations</string>
+    <string name="representatives">My Representatives</string>
+    <string name="election_detail">Election Details</string>
+    <string name="elections">Elections</string>
+    <string name="error_title">Error</string>
+    <string name="error_message">Some data is missing. Please try again later.</string>
+    <string name="representatives_result">Representatives Result</string>
+    <string name="representatives_search">Representatives Search</string>
+    <string name="hint_address_line_1">Address Line 1</string>
+    <string name="hint_address_line_2">Address Line 2</string>
+    <string name="hint_city">City</string>
+    <string name="hint_zip">Zip</string>
+    <string name="button_text_find_my_representatives">Find my Representatives</string>
+    <string name="button_text_use_my_location">use my location</string>
+    <string name="twitter_icon">Twitter icon</string>
+    <string name="user_icon">user icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="browser_icon">browser icon</string>
+    <string name="permission_denied_explanation">You need to grant location permission in order to select the location.</string>
+    <string name="settings">Settings</string>
+    <string name="location_required_error">Location services must be enabled to use the app !!</string>
+    <string name="alert_btn">OK</string>
+    <string name="alert_title">Error</string>
+    <string name="test_test">test test</string>
+
 
 </resources>

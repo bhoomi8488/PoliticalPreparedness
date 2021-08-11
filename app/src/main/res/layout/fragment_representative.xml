@@ -219,6 +219,7 @@
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.android.politicalpreparedness.representative.RepresentativeViewModel" />

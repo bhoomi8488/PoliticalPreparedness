@@ -3,102 +3,93 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.android.politicalpreparedness.MainActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_upcoming_elections"
-            style="@style/header"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/upcoming_elections"
-            android:textColor="@color/gray50"
+            tools:context="com.example.android.politicalpreparedness.MainActivity">
 
-            app:layout_constraintBottom_toTopOf="@id/rv_upcoming_elections"
-            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+            <RelativeLayout
+                android:id="@+id/progress_holder"
+                android:layout_width="@dimen/match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upcomingElectionsTextView"
+                app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/tv_saved_elections"
-            style="@style/title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:text="@string/saved_elections"
-            android:textColor="@color/gray50"
-            android:textSize="@dimen/text_size_large"
-            app:layout_constraintBottom_toTopOf="@id/rv_saved_elections"
-            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/rv_upcoming_elections" />
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_39"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:indeterminateTint="@color/colorPrimaryDark"
+                    android:visibility="@{electionViewModel.shouldShownProgress ? View.VISIBLE : View.GONE}" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/margin_normal" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/upcomingElectionsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginEnd="@dimen/default_padding"
+                    android:liveData="@{electionViewModel.elections}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/default_padding" />
+            </RelativeLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/default_padding" />
+            <TextView
+                android:id="@+id/upcomingElectionsTextView"
+                android:layout_width="@dimen/match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_padding"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginEnd="@dimen/default_padding"
+                android:text="@string/text_upcoming_elections"
+                android:textAppearance="@style/TextView.24.Bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <!--app:listData="@{viewModel.upcomingElections}"-->
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/default_padding" />
+            <TextView
+                android:id="@+id/savedElectionsTextView"
+                android:layout_width="@dimen/match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_padding"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginEnd="@dimen/default_padding"
+                android:text="@string/text_saved_elections"
+                android:textAppearance="@style/TextView.24.Bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progress_holder" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/savedElectionsRecyclerView"
+                android:layout_width="@dimen/match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_padding"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginEnd="@dimen/default_padding"
+                android:liveData="@{electionViewModel.savedElections}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savedElectionsTextView" />
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_upcoming_elections"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/tv_saved_elections"
-            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/tv_upcoming_elections"
-            tools:listitem="@layout/item_election" />
-
-
-        <!--app:listData="@{viewModel.followedElections}"-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_saved_elections"
-            style="@style/subtitle"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/tv_saved_elections"
-            tools:listitem="@layout/item_election" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="com.example.android.politicalpreparedness.election.ElectionsViewModel" />
+        <import type="android.view.View" />
 
+        <variable
+            name="electionViewModel"
+            type="com.example.android.politicalpreparedness.election.ElectionsViewModel" />
     </data>
 </layout>

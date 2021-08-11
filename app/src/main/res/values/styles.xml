@@ -27,4 +27,10 @@
         <item name="android:textSize">@dimen/text_size_normal</item>
     </style>
 
+    <style name="TextView.24.Bold" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/gray50</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_24sp</item>
+    </style>
+
 </resources>

@@ -6,4 +6,5 @@
     <color name="white">#FFFFFF</color>
     <color name="gray50">#7F7F7F</color>
     <color name="gray30">#4d4d4d</color>
+    <color name="transparency">#66333333</color>
 </resources>

@@ -8,32 +8,34 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/election_title"
-            style="@style/title"
-            android:layout_width="0dp"
+            android:id="@+id/electionTitleTextView"
+            android:layout_width="@dimen/match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_padding"
             android:layout_marginTop="@dimen/default_padding"
             android:layout_marginEnd="@dimen/default_padding"
             android:text="@{election.name}"
+            android:textColor="@color/gray50"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Election Title" />
+            tools:text="@string/test_test" />
 
         <TextView
-            android:id="@+id/election_date"
-            style="@style/subtitle"
-            android:layout_width="0dp"
+            android:id="@+id/dateInfoTextView"
+            android:layout_width="@dimen/match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_padding"
-            android:text="@{election.electionDay.toString()}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/default_padding"
+            android:layout_marginEnd="@dimen/default_padding"
+            android:setDateAsText="@{election.electionDay}"
+            android:textColor="@color/gray50"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/election_title"
-            tools:text="Election Date" />
-
+            app:layout_constraintTop_toBottomOf="@id/electionTitleTextView"
+            tools:text="test test" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <data>
@@ -43,6 +45,3 @@
             type="com.example.android.politicalpreparedness.network.models.Election" />
     </data>
 </layout>
-
-
-

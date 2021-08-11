@@ -1,51 +1,69 @@
 package com.example.android.politicalpreparedness.election
 
-import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.android.politicalpreparedness.database.ElectionDatabase
+import com.example.android.politicalpreparedness.election.data.ElectionDataSource
+import com.example.android.politicalpreparedness.network.Result
 import com.example.android.politicalpreparedness.network.models.Election
+import com.example.android.politicalpreparedness.network.models.ElectionResponse
 import kotlinx.coroutines.launch
 
-class ElectionsViewModel(application: Application) : ViewModel() {
+class ElectionsViewModel(private val electionDataSource: ElectionDataSource) : ViewModel() {
 
-    // Create the database singleton.
-    // Define a database variable and assign it to getDatabase(), passing the application.
-    private val database = ElectionDatabase.getInstance(application)
+    companion object {
+        const val TAG = "ElectionsViewModel"
+    }
 
-    // Create the repository.
-    // Instantiate the variable by passing in the singleton AsteroidsDatabase object.
-    private val electionRepository = ElectionRepository(database)
+    private val _elections = MutableLiveData<List<Election>>()
+    val elections: LiveData<List<Election>>
+        get() = _elections
 
-    // Create live data val for upcoming elections
-    val upcomingElections: LiveData<List<Election>>
-        get() = electionRepository.allElections
+    private val _savedElections = MutableLiveData<List<Election>>()
+    val savedElections: LiveData<List<Election>>
+        get() = _savedElections
 
+    private val _shouldShownProgress = MutableLiveData<Boolean>()
+    val shouldShownProgress: LiveData<Boolean>
+        get() = _shouldShownProgress
 
-    val followedElections: LiveData<List<Election>>
-        get() = electionRepository.allFollowedElections
-
-
-    // Refresh the elections using the repository.
-    // Create an init block and launch a coroutine to call electionRepository.refreshElections().
     init {
+        getElectionsFromApi()
+    }
+
+    private fun getElectionsFromApi() {
         viewModelScope.launch {
-            electionRepository.refreshElections()
+            _shouldShownProgress.value = true
+            when (val result = electionDataSource.getElectionFromApi()) {
+                is Result.Success<*> -> {
+                    _shouldShownProgress.value = false
+                    result.data?.let { data ->
+                        _elections.value = (data as ElectionResponse).elections
+                    }
+                }
+                is Result.Error -> {
+                    _shouldShownProgress.value = false
+                    Log.e(TAG, result.message)
+                }
+            }
         }
     }
 
-    private val _navigateToDetailElection = MutableLiveData<Election>()
-    val navigateToDetailElection: LiveData<Election>
-        get() = _navigateToDetailElection
 
-    fun onElectionClicked(election: Election) {
-        _navigateToDetailElection.value = election
+    fun getFollowedElections() {
+        viewModelScope.launch {
+            when (val result = electionDataSource.getSavedElection()) {
+                is Result.Success<*> -> {
+                    result.data?.let { data ->
+                        _savedElections.value = data as List<Election>
+                    }
+                }
+                is Result.Error -> {
+                    Log.e(TAG, result.message)
+                }
+            }
+        }
     }
-
-    fun onElectionNavigated() {
-        _navigateToDetailElection.value = null
-    }
-
 }

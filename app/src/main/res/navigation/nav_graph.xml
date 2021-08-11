@@ -29,10 +29,10 @@
         android:name="com.example.android.politicalpreparedness.election.VoterInfoFragment"
         android:label="fragment_voter_info">
         <argument
-            android:name="argument_election_id"
+            android:name="argElectionId"
             app:argType="integer" />
         <argument
-            android:name="argument_division"
+            android:name="argDivision"
             app:argType="com.example.android.politicalpreparedness.network.models.Division" />
     </fragment>
     <fragment

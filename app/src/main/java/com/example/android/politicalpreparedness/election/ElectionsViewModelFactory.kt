@@ -1,13 +1,15 @@
 package com.example.android.politicalpreparedness.election
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.android.politicalpreparedness.election.data.ElectionDataSource
 
-class ElectionsViewModelFactory(private val context: Application) : ViewModelProvider.Factory {
+@Suppress("UNCHECKED_CAST")
+class ElectionsViewModelFactory(private val electionDataSource: ElectionDataSource) : ViewModelProvider.Factory {
+
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ElectionsViewModel::class.java)) {
-            return ElectionsViewModel(context) as T
+            return ElectionsViewModel(electionDataSource) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
